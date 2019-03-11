@@ -88,7 +88,7 @@ public class TestSingleton {
 				@Override
 				public void doRun() {
 					// 获取单例
-					System.out.println(Sing.getInstance());
+					System.out.println(Sign.getInstance());
 				}
 			});
 		}
@@ -175,14 +175,17 @@ class Singleton {
  * @author 80002888
  * @date   2018年9月27日
  */
-class Sing {
 
-	private static class Singleton {
-		private static Singleton singleton = new Singleton();
-	}
-
-	public static Singleton getInstance() {
-		return com.sf.wdx.design.Sing.Singleton.singleton;
-	}
+class Sign {
+  private Sign(){
+  }
+ 
+  private static class SingHolder{
+     private static Sign sign = new Sign();
+ }
+ 
+  public static Sign getInstance(){
+    return SingHolder.sign;
+  }
 
 }
