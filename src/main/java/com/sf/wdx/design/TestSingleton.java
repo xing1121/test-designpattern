@@ -4,8 +4,6 @@ import java.lang.reflect.Field;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 import org.junit.Test;
 
@@ -88,7 +86,7 @@ public class TestSingleton {
 				@Override
 				public void doRun() {
 					// 获取单例
-					System.out.println(Sign.getInstance());
+					System.out.println(SignInner.getInstance());
 				}
 			});
 		}
@@ -137,15 +135,13 @@ abstract class MyRunnable implements Runnable {
 }
 
 /**
- * 描述：普通单例
+ * 描述：双重锁单例懒汉式
  * @author 80002888
  * @date   2018年9月26日
  */
 class Singleton {
 
-	private static Singleton singleton;
-	
-	private static Lock lock = new ReentrantLock();
+	private volatile static Singleton singleton;
 	
 	private Singleton() {
 	}
@@ -154,15 +150,10 @@ class Singleton {
 		if (singleton != null) {
 			return singleton;
 		}
-		lock.lock();
-		try {
-			synchronized (Singleton.class) {
-				if (singleton == null) {
-					singleton = new Singleton();
-				}
+		synchronized (Singleton.class) {
+			if (singleton == null) {
+				singleton = new Singleton();
 			}
-		} finally {
-			lock.unlock();
 		}
 		return singleton;
 	}
@@ -176,16 +167,16 @@ class Singleton {
  * @date   2018年9月27日
  */
 
-class Sign {
-  private Sign(){
+class SignInner {
+  private SignInner(){
   }
  
-  private static class SingHolder{
-     private static Sign sign = new Sign();
+  private static class SingInnerHolder{
+     private static SignInner sign = new SignInner();
  }
  
-  public static Sign getInstance(){
-    return SingHolder.sign;
+  public static SignInner getInstance(){
+    return SingInnerHolder.sign;
   }
 
 }
