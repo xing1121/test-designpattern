@@ -1,5 +1,10 @@
 package com.sf.wdx.domain;
 
+/**
+ * 描述：Cat
+ * @author 80002888
+ * @date   2019年6月6日
+ */
 public class Cat implements Animal{
 
 	/**
