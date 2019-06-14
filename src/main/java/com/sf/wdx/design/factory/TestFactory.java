@@ -1,10 +1,7 @@
-package com.sf.wdx.design.test;
+package com.sf.wdx.design.factory;
 
 import org.junit.Test;
 
-import com.sf.wdx.design.factory.CatFactory;
-import com.sf.wdx.design.factory.DogFactory;
-import com.sf.wdx.design.factory.StaticAnimalFactory;
 import com.sf.wdx.domain.Animal;
 import com.sf.wdx.domain.Cat;
 import com.sf.wdx.domain.Dog;

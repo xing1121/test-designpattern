@@ -1,8 +1,7 @@
-package com.sf.wdx.design.test;
+package com.sf.wdx.design.builder;
 
 import org.junit.Test;
 
-import com.sf.wdx.design.builder.StudentBuilder;
 import com.sf.wdx.domain.Student;
 
 /**

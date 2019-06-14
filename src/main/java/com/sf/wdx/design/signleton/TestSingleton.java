@@ -1,4 +1,4 @@
-package com.sf.wdx.design.test;
+package com.sf.wdx.design.signleton;
 
 import java.lang.reflect.Field;
 import java.util.concurrent.CountDownLatch;
@@ -6,9 +6,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import org.junit.Test;
-
-import com.sf.wdx.design.signleton.DCLLazySingleton;
-import com.sf.wdx.design.signleton.StaticInnerClassSingleton;
 
 /**
  * 描述：测试单例设计模式

@@ -1,10 +1,9 @@
-package com.sf.wdx.design.test;
+package com.sf.wdx.design.protype;
 
 import java.io.Serializable;
 
 import org.junit.Test;
 
-import com.sf.wdx.design.protype.CloneableProtype;
 import com.sf.wdx.domain.Dog;
 
 /**

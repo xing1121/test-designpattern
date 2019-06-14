@@ -1,11 +1,6 @@
-package com.sf.wdx.design.test;
+package com.sf.wdx.design.adapter;
 
 import org.junit.Test;
-
-import com.sf.wdx.design.adapter.Voltage220;
-import com.sf.wdx.design.adapter.Voltage220To5ClassAdapter;
-import com.sf.wdx.design.adapter.Voltage220To5InterfaceAdapter;
-import com.sf.wdx.design.adapter.Voltage220To5ObjectAdapter;
 
 /**
  * 描述：测试适配器模式
